@@ -23,28 +23,37 @@ def get_example():
   
 import pandas as pd
 import random
+import os
 
 def get_random_questions(exam_type):
     """Fetch random questions from the respective CSV files based on the exam type."""
     question_files = []
-    
     try:
+        # Ensure we get the actual script's directory, not the __pycache__ directory
+        base_dir = os.path.dirname(os.path.realpath(__file__))
+
+        # Navigate one level up to the main HacktheMountain directory
+        hackthemountain_dir = os.path.abspath(os.path.join(base_dir, '../..'))
+        
+        # Construct the path to the csvFiles folder
+        csv_dir = os.path.join(hackthemountain_dir, 'csvFiles')
+
         if exam_type == 'jee':
             # Load the CSV files for JEE
-            chem_df = pd.read_csv(r'csvFiles\Jee_chem.csv')
-            phy_df = pd.read_csv(r'csvFiles\Jee_physics.csv')
-            math_df = pd.read_csv(r'csvFiles\Final_Maths_Jee.csv')
+            chem_df = pd.read_csv(os.path.join(csv_dir, 'Jee_chem.csv'))
+            phy_df = pd.read_csv(os.path.join(csv_dir, 'Jee_physics.csv'))
+            math_df = pd.read_csv(os.path.join(csv_dir, 'Final_Maths_Jee.csv'))
             question_files = [chem_df, phy_df, math_df]
         elif exam_type == 'neet':
             # Load the CSV files for NEET
-            bio_df = pd.read_csv(r'csvFiles\Neet_BIo.csv')
-            phy_df1 = pd.read_csv(r'csvFiles\Neet_phy.csv')
-            chem_df1 = pd.read_csv(r'csvFiles\Neet_chem.csv')
+            bio_df = pd.read_csv(os.path.join(csv_dir, 'Neet_BIo.csv'))
+            phy_df1 = pd.read_csv(os.path.join(csv_dir, 'Neet_phy.csv'))
+            chem_df1 = pd.read_csv(os.path.join(csv_dir, 'Neet_chem.csv'))
             question_files = [bio_df, phy_df1, chem_df1]
         else:
             return None, None
 
-        # Select one random question from each file
+        # Process as before
         questions = []
         solutions = []
         for df in question_files:
@@ -53,7 +62,6 @@ def get_random_questions(exam_type):
                 continue
 
             try:
-                # Randomly select a question
                 selected_row = df.sample(1).iloc[0]
                 if exam_type == 'jee':
                     if df.equals(math_df):
@@ -66,7 +74,6 @@ def get_random_questions(exam_type):
                     question_base64 = selected_row['image']
                     solution_base64 = selected_row['ans']
 
-  # Convert any non-serializable types to serializable ones
                 questions.append(str(question_base64))
                 solutions.append(str(solution_base64))
             except Exception as e:
@@ -103,6 +110,10 @@ def get_questions():
     except Exception as e:
         print(f"Error in /get-questions route: {e}")
         return jsonify({"error": "An unexpected error occurred"}), 500
+
+base_dir = os.path.dirname(os.path.realpath(__file__))
+hackthemountain_dir = os.path.abspath(os.path.join(base_dir, '../..'))
+
 @app.route('/Jee_Maths', methods=['POST'])
 def methsData():
     try:
@@ -110,8 +121,10 @@ def methsData():
         data = request.get_json()
         paragraph = data.get('paragraph', '')
         formOfDocument = int(data.get('formOfDocument', 0))
-        quetionsFile = 'csvFiles/Final_Maths_Jee.csv'
-        TotalMathsMergedData = 'csvFiles/TotalMathsMergedData.csv'
+        csv_file_path = os.path.join(hackthemountain_dir, 'csvFiles', 'Final_Maths_Jee.csv')
+        quetionsFile = csv_file_path
+        csv_file_path2 = os.path.join(hackthemountain_dir, 'csvFiles', 'TotalMathsMergedData.csv')
+        TotalMathsMergedData = csv_file_path2
 
         result = MathsData(paragraph=paragraph, TotalMathsMergedData=TotalMathsMergedData, quetionsFile=quetionsFile, formOfDocument=formOfDocument)
 
@@ -121,9 +134,11 @@ def methsData():
 
         print("Error in processing:", e)
         return jsonify({"error": "Failed to process data"}), 500
+    
 @app.route('/Jee_Chemistry',methods=['POST'])
 def chemData():
-    file = r"csvFiles\Jc.csv"
+    csv_file_path = os.path.join(hackthemountain_dir, 'csvFiles', 'Jc.csv')
+    file = csv_file_path    
     posted_data = request.get_json()
 
     paragraph = posted_data['text']
@@ -133,7 +148,8 @@ def chemData():
 
 @app.route('/Jee_Physics',methods=['POST'])
 def phyData():
-    file = r"csvFiles\Jp.csv"
+    csv_file_path = os.path.join(hackthemountain_dir, 'csvFiles', 'Jee_physics.csv')
+    file = csv_file_path
     posted_data = request.get_json()
 
     paragraph = posted_data['text']
@@ -144,8 +160,8 @@ def phyData():
 def bioData():
 
 
-    file = r"csvFiles\Nb.csv"
-
+    csv_file_path = os.path.join(hackthemountain_dir, 'csvFiles', 'Nb.csv')
+    file = csv_file_path
     
     posted_data = request.get_json()
 
@@ -159,8 +175,8 @@ def chemNEETData():
 
 
     
-    file = r"csvFiles\Nc.csv"
-
+    csv_file_path = os.path.join(hackthemountain_dir, 'csvFiles', 'Nc.csv')
+    file = csv_file_path    
     
     posted_data = request.get_json()
 
@@ -173,8 +189,8 @@ def chemNEETData():
 def phyNEETData():
 
    
-    file = r"csvFiles\Np.csv"
-
+    csv_file_path = os.path.join(hackthemountain_dir, 'csvFiles', 'Np.csv')
+    file = csv_file_path    
     posted_data = request.get_json()
 
     paragraph = posted_data['text']
