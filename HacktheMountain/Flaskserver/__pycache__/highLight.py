@@ -7,34 +7,36 @@ import fitz
 import base64
 from nltk.corpus import stopwords
 
-def highLight(file , page_number):
- 
-    
+def highLight(file , page_number):    
     if file.filename == '':
         return jsonify({'error': 'No selected file'}), 400
 
     if file and file.filename.endswith('.pdf'):
-        # Open the PDF file
-        doc = fitz.open(stream=file.read(), filetype="pdf")
-
-        # Check if the requested page number is valid
-        if page_number < 0 or page_number >= len(doc):
-            return jsonify({'error': 'Invalid page number'}), 400
-
-        # Extract the text from the specified page
-        page = doc[page_number-1]
-        extracted_text = page.get_text()
-        summarized_text = summarize_paragraph(extracted_text)
-
-        # Highlight the summarized text on the PDF page and get the base64 image
-        highlighted_image = image_extractor(summarized_text, page)
-
-        return jsonify({
-            'message': 'File uploaded and processed successfully',
-            'highlighted_image': highlighted_image
-        }), 200
-
+        return _extracted_from_highLight_7(file, page_number)
     return jsonify({'error': 'Invalid file type'}), 400
+
+
+# TODO Rename this here and in `highLight`
+def _extracted_from_highLight_7(file, page_number):
+    # Open the PDF file
+    doc = fitz.open(stream=file.read(), filetype="pdf")
+
+    # Check if the requested page number is valid
+    if page_number < 0 or page_number >= len(doc):
+        return jsonify({'error': 'Invalid page number'}), 400
+
+    # Extract the text from the specified page
+    page = doc[page_number-1]
+    extracted_text = page.get_text()
+    summarized_text = summarize_paragraph(extracted_text)
+
+    # Highlight the summarized text on the PDF page and get the base64 image
+    highlighted_image = image_extractor(summarized_text, page)
+
+    return jsonify({
+        'message': 'File uploaded and processed successfully',
+        'highlighted_image': highlighted_image
+    }), 200
 
 
 def normalize_color(color):
@@ -89,20 +91,20 @@ keywords = [
 def summarize_paragraph(paragraph):
     # Tokenize the paragraph into sentences
     sentences = sent_tokenize(paragraph)
-    
+
     # Define stop words
     stop_words = set(stopwords.words('english'))
-    
+
     # Create a set of keywords for quick lookup
-    keyword_set = set(keyword.lower() for keyword in keywords)
-    
+    keyword_set = {keyword.lower() for keyword in keywords}
+
     # Tokenize and clean sentences
     cleaned_sentences = []
     for sentence in sentences:
         words = word_tokenize(sentence.lower())
         filtered_words = [word for word in words if word.isalnum() and word not in stop_words]
         cleaned_sentences.append(filtered_words)
-    
+
     # Extract sentences that contain any of the keywords
     relevant_sentences = [
         sentence for sentence, words in zip(sentences, cleaned_sentences)

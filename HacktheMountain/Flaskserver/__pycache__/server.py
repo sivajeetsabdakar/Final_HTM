@@ -34,7 +34,7 @@ def get_random_questions(exam_type):
 
         # Navigate one level up to the main HacktheMountain directory
         hackthemountain_dir = os.path.abspath(os.path.join(base_dir, '../..'))
-        
+
         # Construct the path to the csvFiles folder
         csv_dir = os.path.join(hackthemountain_dir, 'csvFiles')
 
@@ -63,17 +63,11 @@ def get_random_questions(exam_type):
 
             try:
                 selected_row = df.sample(1).iloc[0]
-                if exam_type == 'jee':
-                    if df.equals(math_df):
-                        question_base64 = selected_row['questionImage']
-                        solution_base64 = selected_row['ans']
-                    else:
-                        question_base64 = selected_row['image']
-                        solution_base64 = selected_row['ans']
+                if exam_type == 'jee' and df.equals(math_df):
+                    question_base64 = selected_row['questionImage']
                 else:
                     question_base64 = selected_row['image']
-                    solution_base64 = selected_row['ans']
-
+                solution_base64 = selected_row['ans']
                 questions.append(str(question_base64))
                 solutions.append(str(solution_base64))
             except Exception as e:
@@ -82,7 +76,7 @@ def get_random_questions(exam_type):
         if not questions:
             print("No questions were retrieved.")
             return None, None
-        
+
         return questions, solutions
     except Exception as e:
         print(f"Error fetching questions: {e}")
