@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Codes\\Projects\\Final_HTM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Codes\\Projects\\Final_HTM\\HacktheMountain\\Flaskserver\\__pycache__\\server.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HacktheMountain\\Flaskserver\\__pycache__\\server.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Codes\\Projects\\Final_HTM\\HacktheMountain\\Flaskserver\\__pycache__\\tempCodeRunnerFile.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HacktheMountain\\Flaskserver\\__pycache__\\tempCodeRunnerFile.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "tempCodeRunnerFile.py",
+              "DocumentMoniker": "D:\\Codes\\Projects\\Final_HTM\\HacktheMountain\\Flaskserver\\__pycache__\\tempCodeRunnerFile.py",
+              "RelativeDocumentMoniker": "HacktheMountain\\Flaskserver\\__pycache__\\tempCodeRunnerFile.py",
+              "ToolTip": "D:\\Codes\\Projects\\Final_HTM\\HacktheMountain\\Flaskserver\\__pycache__\\tempCodeRunnerFile.py",
+              "RelativeToolTip": "HacktheMountain\\Flaskserver\\__pycache__\\tempCodeRunnerFile.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-02-05T10:43:00.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "server.py",
+              "DocumentMoniker": "D:\\Codes\\Projects\\Final_HTM\\HacktheMountain\\Flaskserver\\__pycache__\\server.py",
+              "RelativeDocumentMoniker": "HacktheMountain\\Flaskserver\\__pycache__\\server.py",
+              "ToolTip": "D:\\Codes\\Projects\\Final_HTM\\HacktheMountain\\Flaskserver\\__pycache__\\server.py",
+              "RelativeToolTip": "HacktheMountain\\Flaskserver\\__pycache__\\server.py",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-02-05T10:42:21.993Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

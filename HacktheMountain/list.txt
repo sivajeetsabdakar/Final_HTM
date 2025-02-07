@@ -1,0 +1,98 @@
+ Volume in drive D is New Volume
+ Volume Serial Number is AA7F-81CD
+
+ Directory of D:\Codes\Projects\Final_HTM\HacktheMountain
+
+07-02-2025  02:11    <DIR>          .
+06-02-2025  01:39    <DIR>          ..
+03-02-2025  21:09    <DIR>          csvFiles
+03-02-2025  21:09    <DIR>          Flaskserver
+07-02-2025  02:11                 0 list.txt
+03-02-2025  21:25    <DIR>          uploads
+               1 File(s)              0 bytes
+
+ Directory of D:\Codes\Projects\Final_HTM\HacktheMountain\csvFiles
+
+03-02-2025  21:09    <DIR>          .
+07-02-2025  02:11    <DIR>          ..
+03-02-2025  21:09         1,444,323 11th_Final_data.csv
+03-02-2025  21:09        19,650,142 Final_Maths_Jee.csv
+03-02-2025  21:09        25,010,249 Jc.csv
+03-02-2025  21:09        25,019,476 Jee_chem.csv
+03-02-2025  21:09        20,854,227 Jee_physics.csv
+03-02-2025  21:09        20,846,870 Jp.csv
+03-02-2025  21:09        16,790,079 Nb.csv
+03-02-2025  21:09        11,076,910 Nc.csv
+03-02-2025  21:09        23,536,243 Neet_BIo.csv
+03-02-2025  21:09        11,080,952 Neet_chem.csv
+03-02-2025  21:09        22,187,757 Neet_phy.csv
+03-02-2025  21:09        22,182,236 Np.csv
+03-02-2025  21:09         3,539,136 TotalMathsMergedData.csv
+              13 File(s)    223,218,600 bytes
+
+ Directory of D:\Codes\Projects\Final_HTM\HacktheMountain\Flaskserver
+
+03-02-2025  21:09    <DIR>          .
+07-02-2025  02:11    <DIR>          ..
+05-02-2025  15:28    <DIR>          __pycache__
+               0 File(s)              0 bytes
+
+ Directory of D:\Codes\Projects\Final_HTM\HacktheMountain\Flaskserver\__pycache__
+
+05-02-2025  15:28    <DIR>          .
+03-02-2025  21:09    <DIR>          ..
+03-02-2025  21:09             2,335 basetoimage.py
+03-02-2025  21:09             1,878 bioNEET.py
+03-02-2025  21:09             1,931 chemData.py
+03-02-2025  21:09             1,956 chemNEETData.py
+04-02-2025  14:00             4,221 highLight.py
+03-02-2025  21:09             2,615 methsData.cpython-312.pyc
+03-02-2025  21:09             2,980 methsData.py
+04-02-2025  02:18             1,910 phyData.py
+03-02-2025  21:09             1,910 phyNEETData.py
+06-02-2025  01:23             8,873 server.py
+05-02-2025  00:13                 0 tempCodeRunnerFile.py
+06-02-2025  01:05             1,488 textextract.py
+06-02-2025  01:05    <DIR>          __pycache__
+              12 File(s)         32,097 bytes
+
+ Directory of D:\Codes\Projects\Final_HTM\HacktheMountain\Flaskserver\__pycache__\__pycache__
+
+06-02-2025  01:05    <DIR>          .
+05-02-2025  15:28    <DIR>          ..
+05-02-2025  00:13             2,757 basetoimage.cpython-312.pyc
+04-02-2025  01:36             2,827 basetoimage.cpython-313.pyc
+04-02-2025  13:46             1,697 bioNEET.cpython-310.pyc
+05-02-2025  00:13             2,208 bioNEET.cpython-312.pyc
+04-02-2025  01:36             2,192 bioNEET.cpython-313.pyc
+04-02-2025  13:46             1,727 chemData.cpython-310.pyc
+05-02-2025  00:13             2,258 chemData.cpython-312.pyc
+04-02-2025  01:36             2,242 chemData.cpython-313.pyc
+04-02-2025  13:46             1,765 chemNEETData.cpython-310.pyc
+04-02-2025  02:26             2,372 chemNEETData.cpython-312.pyc
+04-02-2025  01:36             2,356 chemNEETData.cpython-313.pyc
+04-02-2025  14:00             3,873 highLight.cpython-310.pyc
+05-02-2025  00:13             5,307 highLight.cpython-312.pyc
+04-02-2025  01:36             5,367 highLight.cpython-313.pyc
+04-02-2025  13:46             1,782 methsData.cpython-310.pyc
+05-02-2025  00:13             2,896 methsData.cpython-312.pyc
+04-02-2025  01:36             2,869 methsData.cpython-313.pyc
+04-02-2025  13:46             1,706 phyData.cpython-310.pyc
+05-02-2025  00:13             2,218 phyData.cpython-312.pyc
+04-02-2025  02:18             2,202 phyData.cpython-313.pyc
+04-02-2025  13:46             1,725 phyNEETData.cpython-310.pyc
+05-02-2025  00:13             2,232 phyNEETData.cpython-312.pyc
+04-02-2025  01:36             2,216 phyNEETData.cpython-313.pyc
+06-02-2025  01:05             2,558 textextract.cpython-312.pyc
+04-02-2025  01:36             2,525 textextract.cpython-313.pyc
+              25 File(s)         63,877 bytes
+
+ Directory of D:\Codes\Projects\Final_HTM\HacktheMountain\uploads
+
+03-02-2025  21:25    <DIR>          .
+07-02-2025  02:11    <DIR>          ..
+               0 File(s)              0 bytes
+
+     Total Files Listed:
+              51 File(s)    223,314,574 bytes
+              17 Dir(s)  101,846,405,120 bytes free

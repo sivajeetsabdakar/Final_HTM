@@ -21,7 +21,6 @@ def get_example():
     }
     return jsonify(data)
   
-import pandas as pd
 import random
 import os
 
@@ -218,23 +217,23 @@ def extracted_text():
             result = str(result)
         # print(type(result))
         if subject=="Jc":
-            filePath = r"csvFiles\Jc.csv"
+            filePath = os.path.join(hackthemountain_dir, 'csvFiles', 'Jc.csv')
             return chem_data(filePath,result)
         elif subject=="Jp":
-            filePath = r"csvFiles\Jp.csv"
+            filePath = os.path.join(hackthemountain_dir, 'csvFiles', 'Jp.csv')
             return phy_data(filePath,result)
         elif subject=="Nb":
-            filePath = r"csvFiles\Nb.csv"
+            filePath = os.path.join(hackthemountain_dir, 'csvFiles', 'Nb.csv')
             return bio_data(filePath,result)
         elif subject=="Nc":
-            filePath = r"csvFiles\Nc.csv"
+            filePath = os.path.join(hackthemountain_dir, 'csvFiles', 'Nc.csv')
             return chem_NEET_data(filePath,result)
         elif subject=="Np":
-            filePath = r"csvFiles\Np.csv"
+            filePath = os.path.join(hackthemountain_dir, 'csvFiles', 'Np.csv')
             return phy_NEET_data(filePath,result)
         elif subject=="Jm":
-            filePath = r"csvFiles\Jm.csv"
-            TotalMathsMergedData  =r"csvFiles\TotalMathsMergedData.csv"
+            filePath = os.path.join(hackthemountain_dir, 'csvFiles', 'Jm.csv')
+            TotalMathsMergedData = os.path.join(hackthemountain_dir, 'csvFiles', 'TotalMathsMergedData.csv')
             return MathsData(quetionsFile=filePath,paragraph=result , TotalMathsMergedData=TotalMathsMergedData, formOfDocument='1sd')
         else:
             return jsonify({"Sorry yarr kuch nhi h!!"}, 404) 
