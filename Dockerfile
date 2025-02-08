@@ -18,7 +18,7 @@ RUN apt-get update && \
 RUN tesseract --version
 
 # Copy Python dependencies
-COPY HacktheMountain/req.txt ./req.txt
+COPY backend/req.txt ./req.txt
 
 # Upgrade pip, setuptools, wheel, and Cython
 RUN pip install --upgrade pip setuptools wheel cython && \
@@ -27,7 +27,7 @@ RUN pip install --upgrade pip setuptools wheel cython && \
 RUN python -m nltk.downloader punkt_tab
 
 # Copy the backend code
-COPY HacktheMountain /app
+COPY backend /app
 
 # Expose Flask's default port
 EXPOSE 5000

@@ -106,7 +106,7 @@ def get_questions():
         return jsonify({"error": "An unexpected error occurred"}), 500
 
 base_dir = os.path.dirname(os.path.realpath(__file__))
-hackthemountain_dir = os.path.abspath(os.path.join(base_dir))
+rootdir = os.path.abspath(os.path.join(base_dir))
 
 @app.route('/Jee_Maths', methods=['POST'])
 def methsData():
@@ -115,9 +115,9 @@ def methsData():
         data = request.get_json()
         paragraph = data.get('paragraph', '')
         formOfDocument = int(data.get('formOfDocument', 0))
-        csv_file_path = os.path.join(hackthemountain_dir, 'csvFiles', 'Final_Maths_Jee.csv')
+        csv_file_path = os.path.join(rootdir, 'csvFiles', 'Final_Maths_Jee.csv')
         quetionsFile = csv_file_path
-        csv_file_path2 = os.path.join(hackthemountain_dir, 'csvFiles', 'TotalMathsMergedData.csv')
+        csv_file_path2 = os.path.join(rootdir, 'csvFiles', 'TotalMathsMergedData.csv')
         TotalMathsMergedData = csv_file_path2
 
         result = MathsData(paragraph=paragraph, TotalMathsMergedData=TotalMathsMergedData, quetionsFile=quetionsFile, formOfDocument=formOfDocument)
@@ -131,7 +131,7 @@ def methsData():
     
 @app.route('/Jee_Chemistry',methods=['POST'])
 def chemData():
-    csv_file_path = os.path.join(hackthemountain_dir, 'csvFiles', 'Jc.csv')
+    csv_file_path = os.path.join(rootdir, 'csvFiles', 'Jc.csv')
     file = csv_file_path    
     posted_data = request.get_json()
 
@@ -142,7 +142,7 @@ def chemData():
 
 @app.route('/Jee_Physics',methods=['POST'])
 def phyData():
-    csv_file_path = os.path.join(hackthemountain_dir, 'csvFiles', 'Jee_physics.csv')
+    csv_file_path = os.path.join(rootdir, 'csvFiles', 'Jee_physics.csv')
     file = csv_file_path
     posted_data = request.get_json()
 
@@ -154,7 +154,7 @@ def phyData():
 def bioData():
 
 
-    csv_file_path = os.path.join(hackthemountain_dir, 'csvFiles', 'Nb.csv')
+    csv_file_path = os.path.join(rootdir, 'csvFiles', 'Nb.csv')
     file = csv_file_path
     
     posted_data = request.get_json()
@@ -169,7 +169,7 @@ def chemNEETData():
 
 
     
-    csv_file_path = os.path.join(hackthemountain_dir, 'csvFiles', 'Nc.csv')
+    csv_file_path = os.path.join(rootdir, 'csvFiles', 'Nc.csv')
     file = csv_file_path    
     
     posted_data = request.get_json()
@@ -183,7 +183,7 @@ def chemNEETData():
 def phyNEETData():
 
    
-    csv_file_path = os.path.join(hackthemountain_dir, 'csvFiles', 'Np.csv')
+    csv_file_path = os.path.join(rootdir, 'csvFiles', 'Np.csv')
     file = csv_file_path    
     posted_data = request.get_json()
 
@@ -218,23 +218,23 @@ def extracted_text():
             result = str(result)
         # print(type(result))
         if subject=="Jc":
-            filePath = os.path.join(hackthemountain_dir, 'csvFiles', 'Jc.csv')
+            filePath = os.path.join(rootdir, 'csvFiles', 'Jc.csv')
             return chem_data(filePath,result)
         elif subject=="Jp":
-            filePath = os.path.join(hackthemountain_dir, 'csvFiles', 'Jp.csv')
+            filePath = os.path.join(rootdir, 'csvFiles', 'Jp.csv')
             return phy_data(filePath,result)
         elif subject=="Nb":
-            filePath = os.path.join(hackthemountain_dir, 'csvFiles', 'Nb.csv')
+            filePath = os.path.join(rootdir, 'csvFiles', 'Nb.csv')
             return bio_data(filePath,result)
         elif subject=="Nc":
-            filePath = os.path.join(hackthemountain_dir, 'csvFiles', 'Nc.csv')
+            filePath = os.path.join(rootdir, 'csvFiles', 'Nc.csv')
             return chem_NEET_data(filePath,result)
         elif subject=="Np":
-            filePath = os.path.join(hackthemountain_dir, 'csvFiles', 'Np.csv')
+            filePath = os.path.join(rootdir, 'csvFiles', 'Np.csv')
             return phy_NEET_data(filePath,result)
         elif subject=="Jm":
-            filePath = os.path.join(hackthemountain_dir, 'csvFiles', 'Jm.csv')
-            TotalMathsMergedData = os.path.join(hackthemountain_dir, 'csvFiles', 'TotalMathsMergedData.csv')
+            filePath = os.path.join(rootdir, 'csvFiles', 'Jm.csv')
+            TotalMathsMergedData = os.path.join(rootdir, 'csvFiles', 'TotalMathsMergedData.csv')
             return MathsData(quetionsFile=filePath,paragraph=result , TotalMathsMergedData=TotalMathsMergedData, formOfDocument='1sd')
         else:
             return jsonify({"Sorry yarr kuch nhi h!!"}, 404) 

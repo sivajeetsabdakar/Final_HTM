@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import Option from "./Option";
-import OptionDay from "../component/questionoftheday";
+import OptionDay from "./questionoftheday";
 const QuestionComp = ({ src, flag = true, index, ans }) => {
   const [integerAnswer, setIntegerAnswer] = useState("1");
   const [correctAnswer, setCorrectAnswer] = useState(false);
