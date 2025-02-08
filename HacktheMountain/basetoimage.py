@@ -49,7 +49,7 @@ def main(base64_string: str) -> str:
         return ""
     
     # Create an instance of TextExtractor
-    extractor = TextExtractor(os_type=OS.Window)
+    extractor = TextExtractor()
    
     # Extract text from the image
     try:

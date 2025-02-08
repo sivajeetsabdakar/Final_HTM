@@ -9,10 +9,10 @@ from flask_cors import CORS
 from highLight import highLight
 from basetoimage import main
 import base64 
+import pandas as pd
 
 app = Flask(__name__)
-
-import pandas as pd
+app.config['debug'] = True
 CORS(app=app)
 @app.route('/get-example', methods=['GET'])
 def get_example():
